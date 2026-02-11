@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'features/face_detection/face_detection_screen.dart';
+import 'features/ui/home_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const FaceDetectionScreen(),
+      home: const HomeScreen(),
     );
   }
 }

@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: () {}, child: const Text('SOS')),
+          ElevatedButton(onPressed: () {},child: const Text('SOS'),),
           ElevatedButton(onPressed: () {}, child: const Text('Open Map')),
         ],
       ),
