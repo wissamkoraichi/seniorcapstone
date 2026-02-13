@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -22,12 +21,7 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   Future<void> _initLocation() async {
-    final perm = await Permission.locationWhenInUse.request();
-    if (!perm.isGranted) {
-      setState(() => _error = "Location permission denied");
-      return;
-    }
-
+    final permission = await Geolocator.checkPermission();
     final enabled = await Geolocator.isLocationServiceEnabled();
     if (!enabled) {
       setState(() => _error = "Location services are off");
@@ -48,7 +42,7 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const fallback = LatLng(41.7508, -88.1535);
+    const fallback = LatLng(41.773642, -88.142994);
 
     return Scaffold(
       appBar: AppBar(title: const Text("Map")),
