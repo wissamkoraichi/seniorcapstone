@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'campuswatch-20e6f.firebasestorage.app',
     measurementId: 'G-BR9SMB31JV',
   );
+
 }
